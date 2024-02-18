@@ -1,0 +1,25 @@
+﻿@model IEnumerable<SampleMicrosoftSite.Models.VideoModel>   
+    <div class="row">
+        <div class="col-12">
+            <nav>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index", "DeveloperTools")">Previous Page</a></li>
+                    <li class="breadcrumb-item active">Videos</li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index","About")">Next Page</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var developertools in Model)
+            {
+                <div class="col-4">
+                    <h6>@developertools.TitleNameVideo</h6>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="@developertools.VideoUrl" title="@developertools.TitleNameVideo" allowfullscreen></iframe>
+                        <h6>@developertools.TitleNameVideo2</h6>
+                        <iframe src="@developertools.VideoUrl2" title="@developertools.TitleNameVideo2" allowfullscreen></iframe>
+                    </div>
+                </div>
+            }
+    </div>

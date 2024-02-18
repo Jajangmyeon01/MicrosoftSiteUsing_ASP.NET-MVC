@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SampleMicrosoftSite.Models.FeaturedViewModel>
+<div bgcolor="purple">
+
+    <div class="row">
+        <div class="col-12">
+            <nav>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item active">Home</li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index","DeveloperTools")">Next Page</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <h1 class="display-4 fst-italic">Meet the Microsoft Family</h1>
+            <p class="lead my-3"> Microsoft Corporation, leading developer of personal-computer software systems and applications. The company also publishes books and multimedia titles, produces its own line of hybrid tablet computers, offers e-mail services, and sells electronic game systems and computer peripherals.</p>
+            <p class="lead mb-0"> <a href="#" class="text-black fw-bold">Read More...</a></p>
+        </div>
+        <div class="col-6">
+            <img src="~/wwwroot/images/MicrosoftTools/Microsoftlogo.jpg" class="img-fluid rounded" />
+        </div>
+    </div>
+    <hr />
+    <div class="row mb-3 p-3">
+        @foreach (var featured in Model)
+        {
+            <div class="col-6 p-3">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col" p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary">@featured.Header</strong>
+                        <h4 class="mb-0">@featured.Title</h4>
+                        <div class="mb-1 text-muted">@featured.PostedDate.ToString("MMMM dd, yyyy")</div>
+                        <p class="card-text mb-auto" style="min-height: 150px; max-height: 150px; overflow-y: hidden">@featured.Description</p>
+                        <a href="@Url.Action("Index","Detail", new {id = featured.Id})" class="stretched-link">Continue Reading...</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="@Url.Content($"~/wwwroot/images/MicrosoftTools/{featured.ImageUrl}")" class="rounded" width="200" height="250" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

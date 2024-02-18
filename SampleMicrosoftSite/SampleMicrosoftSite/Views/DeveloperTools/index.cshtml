@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SampleMicrosoftSite.Models.DeveloperToolsModel>
+    <div class="row">
+        <div class="col-12">
+            <nav>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Previous Page</a></li>
+                    <li class="breadcrumb-item active">Developer Tools</li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("Index","Video")">Next Page</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var developertools in Model)
+            {
+                <div class="col-4">
+                    <div class="card">
+                        <img src="@Url.Content($"~/wwwroot/images/MicrosoftTools/{developertools.DeveloperToolsImage}")" style="max-height: 400px" class="card-img-top" alt="@developertools.Name" />
+                        <div class="card-body">
+                            <h5 class="card-title">@developertools.Name</h5>
+                            <div class="mb-1 text-muted">@developertools.ReleasedDates</div>
+                            <p class="card-text" style="max-height: 150px">@developertools.Description</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">@developertools.listOfDescription</li>
+                            <li class="list-group-item">@developertools.listOfDescription2</li>
+                            <li class="list-group-item">@developertools.listOfDescription3</li>
+                        </ul>
+                        <div class="card-footer">
+                            <a href="@Url.Action("Index", "Detail", new {id = developertools.Id, pageType = "DeveloperTools"})" class="card-link">Learn More...</a>
+                        </div>
+                    </div>
+                </div>
+            }
+    </div>
