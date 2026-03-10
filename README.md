@@ -6,8 +6,8 @@
 
 <table align="center">
   <tr>
-    <td><img src="MicrosoftSiteOutputImages/HomePage.png" width="200" /></td>
-    <td><img src="MicrosoftSiteOutputImages/DeveloperTools.png" width="200" /></td>
-    <td><img src="MicrosoftSiteOutputImages/Videos.png" width="200" /></td>
+    <td><img src="MicrosoftSiteOutputImages/HomePage.png" width="400" /></td>
+    <td><img src="MicrosoftSiteOutputImages/DeveloperTools.png" width="400" /></td>
+    <td><img src="MicrosoftSiteOutputImages/Videos.png" width="400" /></td>
   </tr>
   </table>
